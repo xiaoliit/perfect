@@ -1,0 +1,13 @@
+易同学
+后台
+地址:  http://manage.etongxue.net/     
+账号：admin  
+密码：ceshi0107
+
+
+
+易同学招聘版块迭代原型：https://m5env3.axshare.com/#g=1
+
+
+接口文档：
+http://app.etongxue.net/objectdoc/doc/index.html
