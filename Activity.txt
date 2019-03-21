@@ -1,0 +1,44 @@
+【1】What is Activity?
+	一个页面就是一个Activity
+【2】如何创建一个新的Activity?
+	【1】创建一个类继承Activity	
+	【2】重写onCreate(Bundle saveInstances);//Activity页面启动时，调用的方法
+	【3】在onCreate方法中一般是加载布局----setContentView();
+	【4】清单文件中---有意图过滤器。
+		<intent-filter>
+			<action>Main表示主入口          
+			<category>Launcher:启动
+		</intent-filter>
+		【1】action
+		【2】category
+		【3】data	android:mimeType=""
+			
+		
+	【5】android中的四大组件都要在清单文件中进行配置
+		<activity android:name="" android:label="">
+	【6】application代表当前应用
+		【1】icon
+		【2】label
+		<application
+			android:icon="";//
+			
+
+			>
+			<activity>
+			</activity>
+		</application>
+	【7】activity下的label和icon属性可以和Application节点的属性不一样 默认使用Application节点下的属性
+【3】Activity之间的跳转
+	隐式意图
+	【1】创建意图对象(Intent intent = new Intent（）)
+	【2】设置跳转的动作(intent.setAction());
+	【3】设置category（intent.setCategory()）
+	【4】开启startActivity(intent)
+	显示意图----通过指定具体的包名和类名
+		【1】创建意图对象(Intent intent = new Intent()
+		【2】设置包名和类名intent.setClassName(packName,ClassName);packName在清单文件的packName找，className要跳转的类
+		【3】开启Activity【startActivity(intent)】
+		【4】记得在清单文件中配置Activity
+		【5】可以使用Intent的构造方法Intent intent = new Intent(上下文对象,.class);
+	【1】什么时候用显示意图?-------开启应用的界面
+	【2】开启其他应用(系统应用)的时候
