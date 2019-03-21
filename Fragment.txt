@@ -1,0 +1,63 @@
+	【1】What is Fragment
+		fragment：碎片，其与Activity比较相识
+
+
+	【2】创建fragment
+			【1】继承fragment
+			【2】重写onCreateView(LayoutInflater inflater,View Group,Bundle savedInstanceState)//指定要显示的界面
+			【3】inflater.inflate(R.layout.,group,flase);
+
+	【3】在Activity中添加Fragment
+			【1】在
+				Programmatically add the fragment to an existing ViewGroup(动态添加一个fragment)
+					FragmentManager fragmentManager = getFragmentManager();
+					//开启一个事务(动态添加多个fragment一次添加成功)
+					FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+					fragmentTransaction.commit();
+	【3】Fragment的生命周期
+		【1】onAttach(Activity activity)//首先要依附在Activity
+		【2】onCreate(Bundle savedInstanceState);//做一些初始化的工作
+		【3】onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState);//第一次画UI的时候调用
+			View view = inflater.inflate(布局文件，null);
+			return view;
+		【4】onActivityCreated(Bundle savedInstanceState)
+		【5】onStart();
+		【6】onResume();
+		【7】onPause();
+		【8】onStop();
+		【9】onDestoryView();
+		【10】onDestory();//fragment销毁
+		【11】onDetach();//取消依附
+		【12】实际开发的过程中---必须要重写的方法:[1]onCreateView 有时要写的方法:onDestory();
+		【13】这些方法受到Activity的生命周期影响
+	【4】fragment之间通信
+		【1】场景:有一个主界面---有两个部分(左面一个fragment,右面一个fragment)---左边的fragment有一个按钮,右面fragment填充一个textView
+		【2】需求:点击按钮之后，把textView的值给改掉
+		【3】操作
+			【1】在layout画界面
+			【2】MainActivity类中---onCreate(Bundle saveInstances)方法一执行，就动态替换fragment
+			【3】创建两个fragment
+			【4】找到按钮，给按钮设置点击事件
+			【5】getActivity():------------就是获取fragment当前所在界面的activity
+			
+			
+			
+				
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
