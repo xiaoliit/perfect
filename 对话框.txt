@@ -1,0 +1,63 @@
+对话框
+	【1】单选对话框
+	【2】多选对话框
+	【3】普通对话框
+	【4】进度条对话框
+普通对话框
+	【1】弹出对话框对应一个类---AlertDialog
+	【2】构造方式(Builder---静态内部类)
+		AlertDialog.Builder builder = new Builder(getApplicationContext());//传递上下文对象
+		【1】常见方法
+			【1】builder.setTitle();//设置对话框的标题
+			【2】builder.setMessage();//设置对话框的内容
+			【3】builder.setPositionButton(设置按钮文字，点击按钮的事件)//设置按钮点击
+			【4】builder.setNegativeButton()
+		【2】最后一步一定要show出来.(和Toast差不多)
+
+单选对话框
+	【1】定义一个String数组
+		String items[] = {"","",""};
+	【2】创建对象
+		builder.setSingleChoiceItems(String 数组,-1代表没有条目被选中，new OnclickListener());
+	【3】点中一个，执行onClickListener方法
+		【1】将选中的数据取出来
+			items[which];
+		【2】把对话框给关闭
+			items.dismiss();	
+
+多选对话框
+	【1】builder.setMultChoiceItems(items,checkedItems,listener);第二个参数boolea类型的数组boolean checkedItem={true,false,false,false,false}
+	【2】listener = new OnMultiChoiceClickListener(){}
+	【3】多选框中弹出按钮
+		builder.setPositiveButton()
+	【4】把选中的条目选择出来
+		for(){
+			if(checkedItems[i]){}		
+
+
+		}
+
+进度条对话框
+	【1】获取进度条对话框对象 
+		ProgressDialog progressDialog = new ProgressDialog(this);//参数是接受上下文
+	【2】progressDialog.setTitle("");
+		【1】设置进度条的样式
+			progressDialog.setProgressStyle(ProgressDialog.SYTLE_HORIZONTAL);
+	【3】一定要记得show
+		progressDialog.show();
+	【4】与进度相关的控件件，都可以在子线程更新UI
+		【1】创建一个子线程
+			new Thread(){
+	
+			【1】设置进度条最大值
+				progressDialog.setMax(100);
+			【2】设置当前进度
+				for(int i=0;i<100;i++){
+				
+					progressDialog.setProgress(i);
+				}
+				
+
+			}
+			【3】关闭进度对话框
+				progressDialog.dismiss();

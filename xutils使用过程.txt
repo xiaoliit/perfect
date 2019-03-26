@@ -1,0 +1,16 @@
+Xutils使用过程
+	【1】导入utils的包
+	【2】添加utils需要的权限
+		【1】<user-permission android:name="android.permission.INTERENT">
+		【2】<user-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+	【3】获取HttpUtils对象,下载指定连接地址的apk-----发送请求，获取apk,并放置在指定的路径
+		HttpUtils httpUtils = new HttpUtils();
+		httpUtils.downLoad(URL,target,callback);//target下载应用放置位置   callback泛型
+		callback---new RequestCallBack(){
+			public void onSuccess (ResponseInfo<File> arg0){}		
+
+			public void onFailure(HttpException arg0,String arg1){}
+
+
+
+		}

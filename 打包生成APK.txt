@@ -1,0 +1,5 @@
+打包签名成APK
+	【1】使用AndroidStudio工具打包生成签名的APK
+		【1】Build-->Generate Signed Bundle/APK
+	【2】生成签名文件，并指定文件的位置
+	【3】使用生成的签名文件，给工程打包生成一个apk
